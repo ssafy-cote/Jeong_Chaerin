@@ -34,40 +34,36 @@ N은 0보다 크거나 같고, P보다 작거나 같은 정수이다.
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    int N, P, num, cnt = 0, rank = 1;
-    cin >> N >> num >> P;
+int main() {
+  int N, P, num, cnt = 0, rank = 1;
+  cin >> N >> num >> P;
 
-    int score[50] = {
-        0,
-    };
+  int score[50] = {
+      0,
+  };
 
-    if (N == 0)
-    {
-        cout << 1 << "\n";
-        return 0;
-    }
-
-    for (int i = 0; i < N; i++)
-    {
-        cin >> score[i];
-    }
-
-    for (int i = 0; i < N; i++)
-    {
-        if (score[i] > num)
-            rank++;
-        else if (num > score[i])
-            break;
-
-        cnt++; // 태수와 동점인 사람이 여러명이어서 P를 넘어갈 경우 태수의 등수는 등록되지 않기 때문
-    }
-
-    if (cnt >= P)
-        rank = -1;
-
-    cout << rank << "\n";
-
+  if (N == 0) {
+    cout << 1 << "\n";
     return 0;
+  }
+
+  for (int i = 0; i < N; i++) {
+    cin >> score[i];
+  }
+
+  for (int i = 0; i < N; i++) {
+    if (score[i] > num)
+      rank++;
+    else if (num > score[i]) // 랭크가 높으면
+      break;
+
+    cnt++;
+  }
+
+  if (cnt >= P)
+    rank = -1;
+
+  cout << rank << "\n";
+
+  return 0;
 }

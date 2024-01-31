@@ -14,12 +14,9 @@
 출력
 첫째 줄에 필요한 세트의 개수를 출력한다.
  */
-
-package study;
-
 import java.util.Scanner;
 
-public class BJ_1475 {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();

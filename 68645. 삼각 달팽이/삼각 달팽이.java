@@ -1,14 +1,7 @@
-package study;
+import java.util.Scanner;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-
-public class PG_68645 {
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-
+class Solution {
+    public int[] solution(int N) {
         int[][] arr = new int[N][N];
         int[][] deltas = { { 1, 0 }, { 0, 1 }, { -1, -1 } };
 
@@ -33,6 +26,6 @@ public class PG_68645 {
                 num++;
             }
         }
-        System.out.println(Arrays.toString(answer));
+        return answer;
     }
 }
